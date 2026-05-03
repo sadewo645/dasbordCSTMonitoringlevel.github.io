@@ -17,8 +17,8 @@ export default function Home() {
     const client = mqtt.connect(
       "wss://2c4a86ed75a8439d80170f3d36f32cf3.s1.eu.hivemq.cloud:8884/mqtt",
       {
-        username: "CstTest123",
-        password: "ZY@SKrww3fCzM@e"
+        username: "hivemq.webclient.1777822505379",
+        password: "J2ba!W9B#c&yLC6r5Y<v"
       }
     );
 
