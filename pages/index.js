@@ -62,18 +62,24 @@ export default function Home() {
       {!data && <p className="mb-4 text-slate-300">Menunggu data MQTT realtime...</p>}
 
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <DataCard label="CPO Level" value={data?.cpo} unit="m" accent="yellow" />
-        <DataCard label="Water Level" value={data?.water} unit="m" accent="blue" />
-        <DataCard label="Sludge Level" value={data?.sludge} unit="m" accent="amber" />
-        <DataCard label="Total Level" value={data?.totalLevel} unit="cm" />
-        <DataCard label="Volume" value={data?.volume} unit="L" accent="emerald" />
-        <DataCard label="Mass" value={data?.mass} unit="kg" accent="violet" />
-        <DataCard label="Weight" value={data?.weight} unit="N" accent="fuchsia" />
+<DataCard label="Total Level" value={data?.total_level_cm} unit="cm" />
+
+<DataCard label="Volume CPO" value={data?.volume_cpo} unit="L" accent="yellow" />
+<DataCard label="Volume Water" value={data?.volume_water} unit="L" accent="blue" />
+<DataCard label="Volume Sludge" value={data?.volume_sludge} unit="L" accent="amber" />
+
+<DataCard label="Mass CPO" value={data?.mass_cpo} unit="kg" />
+<DataCard label="Mass Water" value={data?.mass_water} unit="kg" />
+<DataCard label="Mass Sludge" value={data?.mass_sludge} unit="kg" />
+
+<DataCard label="Weight CPO" value={data?.weight_cpo} unit="N" />
+<DataCard label="Weight Water" value={data?.weight_water} unit="N" />
+<DataCard label="Weight Sludge" value={data?.weight_sludge} unit="N" />
         <motion.div className="glass rounded-xl p-4 shadow-card" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <p className="text-xs uppercase tracking-widest text-slate-400">Temperature</p>
-          <p className={`mt-2 text-2xl font-semibold ${getTempColor(Number(data?.temp ?? 0))}`}>
-            {data?.temp ?? "--"} °C
-          </p>
+<p className={`mt-2 text-2xl font-semibold ${getTempColor(tempAvg)}`}>
+  {tempAvg.toFixed(1)} °C
+</p>
           <p className="mt-1 text-xs text-slate-400">25-84 merah, 85-95 biru, 96-110 merah</p>
         </motion.div>
       </section>
