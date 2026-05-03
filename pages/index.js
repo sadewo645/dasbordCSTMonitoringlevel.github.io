@@ -17,8 +17,8 @@ export default function Home() {
     const client = mqtt.connect(
       "wss://2c4a86ed75a8439d80170f3d36f32cf3.s1.eu.hivemq.cloud:8884/mqtt",
       {
-        username: "hivemq.webclient.1777827197775",
-        password: "j51W3v,JX7!h.HF?Msgd"
+        username: "esp32user",
+        password: "Esp32user123"
       }
     );
 
